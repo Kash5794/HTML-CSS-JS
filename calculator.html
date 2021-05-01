@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <title>Reduction</title>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+background-color: lightsteelblue;
+
+}
+.cal-container{
+background-color: black;
+margin-right: auto;
+margin-left: auto;
+margin-top: 100px;
+border: 10px solid blue;
+width: 250px;
+height: 430px;
+
+}
+input{
+    border: 5px solid blue;
+    font-size: 20px;
+}
+.cal-item{
+    text-align: center;
+    border: 1px solid orange;
+    margin: 5px;
+    padding: 10px;
+    height: 30px;
+    width: 50px;
+    background-color: white;
+    color:black;
+    font-size: 25px;
+}
+.cal-item:hover{
+    background-color: orange;
+}
+</style>
+
+</head>
+<body>
+<section>
+<div class="cal-container">
+<input id="input" type="text" name="textfield" style="margin: 10px;height:30px;width:220px">
+<div style="display: flex">
+<div id="one" class="cal-item" onclick='digit("one")'>1</div>
+<div id = "two" class="cal-item" onclick='digit("two")' >2</div>
+<div id = "three" class="cal-item" onclick='digit("three")'>3</div></div>
+<div  style="display: flex">
+<div id = "four" class="cal-item" onclick='digit("four")'>4</div>
+<div id = "five" class="cal-item" onclick='digit("five")'>5</div>
+<div id = "six" class="cal-item" onclick='digit("six")'>6</div></div>
+<div  style="display: flex">
+<div id = "seven" class="cal-item" onclick='digit("seven")'>7</div>
+<div id = "eigth" class="cal-item" onclick='digit("eigth")'>8</div>
+<div id = "nine" class="cal-item" onclick='digit("nine")'>9</div></div>
+<div  style="display: flex">
+<div id = "zero" class="cal-item" onclick='digit("zero")'>0</div>
+<div id="dot" class="cal-item" onclick='digit("dot")'>.</div>
+<div id="clear" class="cal-item" onclick="clearText()">c</div>
+</div>
+
+<div style="display: flex;float: right;margin-right: 5px;">
+        <div id="equal" class="cal-item" onclick="equal()" style="height: 90px;"><div style="margin-top: 30px">=</div></div>
+</div>
+<div style="display: flex">
+        <div id="plus" class="cal-item" onclick='digit("plus")'>+</div>
+        <div id="minus" class="cal-item" onclick='digit("minus")' >-</div>      
+</div>
+<div style="display: flex">
+        <div id="mul" class="cal-item" onclick='digit("mul")'>*</div>
+           <div id="divi" class="cal-item" onclick='digit("divi")'>/</div>         
+           
+   </div>
+
+
+</div>
+
+
+</section>
+
+<script>
+var textfield = document.getElementById("input");
+textfield.readOnly=true;
+function digit(number){
+    
+var digit=document.getElementById(number).innerHTML;
+   textfield.value +=digit;
+}
+function equal(){
+     
+   textfield.value =parseFloat(eval(textfield.value)) ;
+}
+function clearText(){
+     
+textfield.value="";
+  }
+
+</script>
+</body>
+
+
+
+
+</html>
